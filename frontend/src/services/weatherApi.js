@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api'
+const API_BASE_URL =
+  import.meta.env.MODE === 'development'
+    ? 'http://localhost:8000/api'
+    : 'https://weather-app-backend-xsm7.onrender.com/api'
 
 // Create axios instance with default config
 const apiClient = axios.create({
